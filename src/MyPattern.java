@@ -4,7 +4,7 @@
 public class MyPattern {
 
     private char[][] gameTable;    // pol prywatne metody publiczne
-    private char userChar; // tu beda X i O
+        private char userChar; // tu beda X i O
 
     public MyPattern() {
         gameTable = new char[3][3];
@@ -12,8 +12,20 @@ public class MyPattern {
         startTable();
     }
 
+    public void setGameTable(char[][] gameTable) {
+        this.gameTable = gameTable;
+    }
+
+    public char[][] getGameTable() {
+        return gameTable;
+    }
+
     public char getUserChar() {
         return userChar;
+    }
+
+    public void setUserChar(char userChar) {
+        this.userChar = userChar;
     }
 
     public void changePlayer() {
@@ -40,7 +52,7 @@ public class MyPattern {
     void startTable() {
         // leci po rzedach
         for (int i = 0; i < 3; i++) {
-            //leci po tabelach
+            //leci po kolumnach
             for (int j = 0; j < 3; j++) {
                 gameTable[i][j] = '?';
             }
